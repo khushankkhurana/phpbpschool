@@ -390,7 +390,20 @@ function readURL(input) {
                                              	</select>
                                              	<input type="hidden" name="txtnewold" id="txtnewold" value="Old" />
                                              </div>
-
+                                              <div class="col-md-3">
+                                                <select   name="tconcession" id="tconcession" class="form-control" onclick="concess()" required >
+                                               <!-- onchange="showHint(this.value)" --->
+                                               	<option value="" disabled selected>Scholarship/Concession</option>
+                                                <?php
+                                               	$co1=0 ;
+                                               	while ($co1 <count($tconcession)){
+                                               	?>
+                                               	<option value= "<?php echo $tconcession2[$co1] ?>" >  <?php echo $tconcession[$co1] ?> </option>;
+                                               	<?php $co1=$co1+1;
+                                               	}
+                                               ?>
+                                               </select>
+                                              </div>
                                               </div>
                                             <div class="form-group row">
                                                 <div class="col-md-3">
@@ -443,7 +456,31 @@ function readURL(input) {
                                                   </select>
                                                 </div>
 </div>
-                                            <div class="form-group"></div>
+                                            <div class="form-group row">
+
+                                                <div class="col-md-3">
+                                                  <select  name="tstation" id="tstation" class="form-control" onclick="stat()" required>
+                                                 <!-- onchange="showHint(this.value)" --->
+                                                 	<option value="" disabled selected>Transport Route</option>
+
+                                                  <?php
+                                                 	$co1=0 ;
+                                                 	while ($co1 <count($tstation2)){
+                                                 	?>
+                                                 	<option value= "<?php echo $tstation2[$co1] ?>" >   <?php echo $tstation[$co1] ?> </option>;
+                                                 	<?php $co1=$co1+1;
+                                                 	}
+                                                 ?>
+                                                 </select>
+                                                 <input  type="hidden"  name="station" id="station"  readonly />
+
+                                              </div>
+                                                <div class="col-md-3">
+                                                  <input  type="text" name="charges" id="charges" value= "0.00" class="form-control" readonly >
+
+
+                                                </div>
+                                                </div>
 
                                     </div>
                                </div>
